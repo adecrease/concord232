@@ -101,7 +101,7 @@ class SerialInterface(object):
         return MSG_START
 
     def _read1(self):
-        c = self.serdev.read(size=1).decode('utf-8')
+        c = self.serdev.read(size=1).decode('utf-8', errors='ignore')
         return c
 
     def _try_to_read(self, n):
